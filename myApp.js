@@ -1,3 +1,11 @@
-var username=prompt("give me a user name")
+var buttontrans = document.querySelector("#bt-trans")
+var textinput=document.querySelector("#text-in")
+console.log(textinput)
 
-alert("this is working " +username);
+
+function clickeventhandler(){
+    console.log("translated")
+    console.log("input",textinput.value)
+};
+
+buttontrans.addEventListener("click",clickeventhandler)
