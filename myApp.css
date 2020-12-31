@@ -4,4 +4,20 @@ textarea{
     display: block;
     height: 10vh;
     margin: 1rem;
+    border: 1px solid black;
+}
+
+#out{
+    font-size: large;
+    margin-top: 1rem;
+
+}
+
+#box{
+    border: 1px solid black;
+    padding: 3rem ;
+    display: block;
+    margin: 1rem ;
+    width: 70%;
+
 }

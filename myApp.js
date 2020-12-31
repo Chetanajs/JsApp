@@ -1,5 +1,6 @@
 var buttontrans = document.querySelector("#bt-trans")
 var textinput=document.querySelector("#text-in")
+var outdiv=document.querySelector("#box")
 console.log(textinput)
 
 
