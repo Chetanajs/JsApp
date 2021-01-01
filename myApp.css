@@ -13,7 +13,7 @@ textarea{
 
 }
 
-#box{
+#outputdiv{
     border: 1px solid black;
     padding: 3rem ;
     display: block;
