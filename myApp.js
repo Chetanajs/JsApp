@@ -1,33 +1,34 @@
 var buttontrans = document.querySelector("#bt-trans")
 var textinput=document.querySelector("#text-in")
 var outdiv=document.querySelector("#outputdiv")
-console.log(textinput)
+
+
 
 var serverURL= "https://api.funtranslations.com/translate/minion.json"
 
 
 
-function gettransURL(text){
-    return serverURL +"?" +"text"+ text
+function gettransURL(input){
+    return serverURL +"?" +"text="+ input 
 }
 
 function errorhandler(error){
-    console.log("errorboccured",error);
+    console.log("erroroccured",error);
     alert("something wrong with server! try again")
 }
 
 function clickhandler(){
-    var inputtext=textinput.value;//taking input
+    var inputtext=textinput.value;  //taking input
 
 //calling server for processing
 
-fetch (gettransURl(inputtext))
-    .then(Response=>Response.json())
-    .then (json=>{
-        var transtext=json.contents.translated;
-        outdiv.innertext=transtext;
-    })
-.catch(errorhandler)
+    fetch (gettransURL(inputtext))
+        .then(response=>response.json())
+        .then (json=>{
+            var transtext=json.contents.translated;
+            outdiv.innertext=transtext;
+        })
+    .catch(errorhandler)
 };
 
-buttontrans.addEventListener("click",clickeventhandler)
+buttontrans.addEventListener("click",clickhandler)
