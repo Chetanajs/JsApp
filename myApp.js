@@ -3,13 +3,11 @@ var textinput=document.querySelector("#text-in")
 var outdiv=document.querySelector("#outputdiv")
 
 
-
 var serverURL= "https://api.funtranslations.com/translate/minion.json"
 
 
-
-function gettransURL(input){
-    return serverURL +"?" +"text="+ input 
+function gettransURL(text){
+    return serverURL +"?" +"text="+ text 
 }
 
 function errorhandler(error){
@@ -23,10 +21,10 @@ function clickhandler(){
 //calling server for processing
 
     fetch (gettransURL(inputtext))
-        .then(response=>response.json())
-        .then (json=>{
+        .then(response => response.json())
+        .then (json=> {
             var transtext=json.contents.translated;
-            outdiv.innertext=transtext;
+            outdiv.innertext= transtext;
         })
     .catch(errorhandler)
 };
